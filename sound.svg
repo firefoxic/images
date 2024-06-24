@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke="black" stroke-linecap="round">
+	<style>
+		path {
+			--time1: 0.8s;
+			--time2: 1.3s;
+
+			transform-origin: 0;
+			animation-name: play1, play2;
+			animation-delay:
+				calc(var(--time1) * var(--delay1)),
+				calc(var(--time2) * var(--delay2));
+			animation-duration: var(--time1), var(--time2);
+			animation-direction: alternate-reverse;
+			animation-iteration-count: infinite;
+		}
+
+		path:nth-child(3n+1) { --delay1: -0.7 }
+		path:nth-child(3n+2) { --delay1: -0.3 }
+		path:nth-child(3n+3) { --delay1: -0.5 }
+
+		path:nth-child(5n+1) { --delay2: -0.4 }
+		path:nth-child(5n+2) { --delay2: -0.7 }
+		path:nth-child(5n+3) { --delay2: -0.2 }
+		path:nth-child(5n+4) { --delay2: -0.8 }
+		path:nth-child(5n+5) { --delay2: -0.3 }
+
+		@keyframes play1 {
+			0%   { scale: 1 1.1 }
+			50%  { scale: 1 0.9 }
+			100% { scale: 1 1.0 }
+		}
+
+		@keyframes play2 {
+			0%   { transform: scaleY(1.1) }
+			20%  { transform: scaleY(0.9) }
+			40%  { transform: scaleY(1.0) }
+			60%  { transform: scaleY(0.8) }
+			80%  { transform: scaleY(0.9) }
+			100% { transform: scaleY(1.1) }
+		}
+	</style>
+	<path d="m6 10.5v3"/>
+	<path d="m8 8.5v7"/>
+	<path d="m10 6.5v11"/>
+	<path d="m12 4.5v15"/>
+	<path d="m14 6.5v11"/>
+	<path d="m16 8.5v7"/>
+	<path d="m18 10.5v3"/>
+</svg>
